@@ -70,23 +70,39 @@ export class ToDosComponent implements OnInit{
       console.log(todo);
   }
 
-  //
-  // // EDIT A TODO
-  // updateTodoText(event, todo) {
-  //   if(event.which === 13){
-  //     todo.text = event.target.value;
-  //     var _todo =  {
-  //       _id: todo._id,
-  //       text: todo.text,
-  //       isCompleted: todo.isCompleted
-  //     };
-  //
-  //     this._todoService.updateTodo(_todo)
-  //     .subscribe(data => {this.setEditState(todo,false);})
-  //   }
-  // }
-  //
-  //
+
+  // EDIT A TODO
+  updateTodoText(event, todo) {
+    if(event.which === 13){
+      todo.title = event.target.value;
+      var _todo =  {
+        _id: todo._id,
+        title: todo.title,
+        date: todo.date,
+        isCompleted: todo.isCompleted
+      };
+
+      this._todoService.updateTodo(_todo)
+      .subscribe(data => {this.setEditState(todo,false);})
+    }
+  }
+
+  updateTodoDate(event, todo) {
+    if(event.which === 13){
+      todo.date = event.target.value;
+      var _todo =  {
+        _id: todo._id,
+        title: todo.title,
+        date: todo.date,
+        isCompleted: todo.isCompleted
+      };
+
+      this._todoService.updateTodo(_todo)
+      .subscribe(data => {this.setEditState(todo,false);})
+    }
+  }
+
+
   // DELETE A TODO
   deleteTodo(todo){
     var todos = this.todos;

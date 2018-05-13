@@ -48,56 +48,26 @@
 
         <tbody>
           <tr class="todo" *ngFor="let todo of todos">
-
-            <td>{{todo.title}}</td>
-            <td>{{todo.date | date:'short'}}</td>
+            <td>
+              <span [class.hidden]="todo.isEditMode">{{todo.title}}</span>
+              <input type="text" [class.hidden]="!todo.isEditMode" [value]="todo.title" (keypress)="updateTodoText($event,todo)">
+              <input type="button" [class.hidden]="!todo.isEditMode" value="cancel" (click)="setEditState(todo,false)" class="btn btn-warning">
+            </td>
+            <td>
+              <span [class.hidden]="todo.isEditMode">{{todo.date | date:'short'}}</span>
+              <input type="datetime-local" [class.hidden]="!todo.isEditMode" [value]="todo.date" (keypress)="updateTodoDate($event,todo)">
+              <input type="button" [class.hidden]="!todo.isEditMode" value="cancel" (click)="setEditState(todo,false)" class="btn btn-warning">
+            </td>
             <td>{{todo.isCompleted}}</td>
 
-            <!-- <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLongTitle">Edit To-Do</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  </div>
-                  <div class="modal-body">
-                    <form role="form" method="POST" action="">
-                      <input type="hidden" name="_token" value="">
-                      <div class="form-group">
-                        <label class="control-label" #newTitle>New To-Do Title</label>
-                        <div>
-                          <input type="text" maxlength="160" class="form-control input-lg" name="description" value="">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label" #newDate>Choose due date</label>
-                        <div>
-                          <input type="datetime-local" class="form-control input-lg" name="duedate">
-                        </div>
-                      </div>
-                      <!-- <div class="slidecontainer">
-                        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
-                        <p id="sliderValue"></p>
-                      </div> -->
-
-
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button (click)="editTodo(todo)" type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
             <td>
-              <button (click)="updateStatus(todo)" class="btn btn-success" value="Completed"><i  class="fa fa-check"></i></button>
+              <!-- <button (click)="updateStatus(todo)" class="btn btn-success" value="Completed"><i  class="fa fa-check"></i></button> -->
+
+              <input [checked]="todo.isCompleted" (click)="updateStatus(todo)" type="checkbox" value="Completed">
 
 
-              <button class="btn btn-primary" value="Edit"><i  class="fas fa-edit"></i>
+              <button [class.disabled]="todo.isCompleted" (click)="setEditState(todo, true)" class="btn btn-primary" value="Edit"><i  class="fas fa-edit"></i>
 
 
 
