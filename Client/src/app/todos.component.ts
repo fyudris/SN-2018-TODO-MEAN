@@ -76,20 +76,20 @@ export class ToDosComponent implements OnInit{
   // }
   //
   //
-  // // DELETE A TODO
-  // deleteTodo(todo){
-  //   var todos = this.todos;
-  //
-  //   this._todoService.deleteTodo(todo._id)
-  //   .subscribe(data => {
-  //     if(data.n == 1){
-  //       for(var i = 0; i < todos.length; i++){
-  //         if(todos[i]["_id"] == todo._id){
-  //           todos.splice(i, 1);
-  //         }
-  //       }
-  //     }
-  //   });
-  // }
+  // DELETE A TODO
+  deleteTodo(todo){
+    var todos = this.todos;
+
+    this._todoService.deleteTodo(todo._id)
+    .subscribe(data => {
+      if(data.n == 1){
+        for(var i = 0; i < todos.length; i++){
+          if(todos[i]["_id"] == todo._id){
+            todos.splice(i, 1);
+          }
+        }
+      }
+    });
+  }
 
 }//

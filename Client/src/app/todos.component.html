@@ -41,7 +41,7 @@
           <tr class="h">
             <th class="h">Title</th>
             <th class="h">Due Date</th>
-            <th class="h">Status</th>
+            <th class="h">Completed</th>
             <th class="h">Options</th>
           </tr>
         </thead>
@@ -56,7 +56,7 @@
             <td>
               <button class="btn btn-success" value="Completed"><i  class="fa fa-check"></i></button>
               <button class="btn btn-primary" value="Edit"><i  class="fas fa-edit"></i>  </button>
-              <button class="btn btn-danger" value="Delete"><i  class="fa fa-trash"></i></button>
+              <button (click)="deleteTodo(todo)" class="btn btn-danger" value="Delete"><i  class="fa fa-trash"></i></button>
 
             </td>
           </tr>
