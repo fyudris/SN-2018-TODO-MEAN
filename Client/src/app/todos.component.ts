@@ -57,7 +57,8 @@ export class ToDosComponent implements OnInit{
   updateStatus(todo) {
     var _todo = {
     _id : todo._id,
-    text: todo.text,
+    title: todo.title,
+    date: todo.date,
     isCompleted: !todo.isCompleted
     };
     this._todoService.updateTodo(_todo).subscribe(data => {
