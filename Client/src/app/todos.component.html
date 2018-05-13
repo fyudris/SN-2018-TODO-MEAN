@@ -54,7 +54,7 @@
             <td>{{todo.isCompleted}}</td>
 
             <td>
-              <button class="btn btn-success" value="Completed"><i  class="fa fa-check"></i></button>
+              <button  (click)="updateStatus(todo)" class="btn btn-success" value="Completed"><i  class="fa fa-check"></i></button>
               <button class="btn btn-primary" value="Edit"><i  class="fas fa-edit"></i>  </button>
               <button (click)="deleteTodo(todo)" class="btn btn-danger" value="Delete"><i  class="fa fa-trash"></i></button>
 
