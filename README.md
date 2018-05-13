@@ -25,6 +25,9 @@ $   npm install -g @angular/cli
 $   npm install
 $   ng build
 ```
+
+## Running the Project
+
 * Go to the root directory and run following command:
 
 ```
