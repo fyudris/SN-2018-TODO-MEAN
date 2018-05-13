@@ -34,6 +34,16 @@ $   ng build
 $   nodemon server
 ```
 
+## How to use this project
+* Use the form at the bottom of the page to create a new ToDo.
+* Use the checkbox and buttons on the option column for these functionalities:
+  * **Checkbox** - *Update status of the current todo from false to true and vice versa.*
+  * **Blue Edit Button** - *Edit todo's values then press Enter to save.*
+  * **Red Delete Button** - *Delete a todo.*
+<img width="694" alt="capture" src="https://user-images.githubusercontent.com/20013173/39970675-e6c57f3a-56ef-11e8-9203-6197b7e0a6a7.PNG">
+
+
+
 ## Authors
 
 * **Fanny Yudris** - *Initial work* - [fyudris](https://github.com/fyudris)
