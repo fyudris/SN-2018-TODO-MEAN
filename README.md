@@ -34,7 +34,7 @@ $   ng build
 $   nodemon server
 ```
 
-## How to use this project
+## How to use this App
 * Use the form at the bottom of the page to create a new ToDo.
 * Use the checkbox and buttons on the option column for these functionalities:
   * **Checkbox** - *Update status of the current todo from false to true and vice versa.*
