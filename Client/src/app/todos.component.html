@@ -53,10 +53,60 @@
             <td>{{todo.date | date:'short'}}</td>
             <td>{{todo.isCompleted}}</td>
 
+            <!-- <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLongTitle">Edit To-Do</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                  <div class="modal-body">
+                    <form role="form" method="POST" action="">
+                      <input type="hidden" name="_token" value="">
+                      <div class="form-group">
+                        <label class="control-label" #newTitle>New To-Do Title</label>
+                        <div>
+                          <input type="text" maxlength="160" class="form-control input-lg" name="description" value="">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label" #newDate>Choose due date</label>
+                        <div>
+                          <input type="datetime-local" class="form-control input-lg" name="duedate">
+                        </div>
+                      </div>
+                      <!-- <div class="slidecontainer">
+                        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+                        <p id="sliderValue"></p>
+                      </div> -->
+
+
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button (click)="editTodo(todo)" type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
             <td>
-              <button  (click)="updateStatus(todo)" class="btn btn-success" value="Completed"><i  class="fa fa-check"></i></button>
-              <button class="btn btn-primary" value="Edit"><i  class="fas fa-edit"></i>  </button>
+              <button (click)="updateStatus(todo)" class="btn btn-success" value="Completed"><i  class="fa fa-check"></i></button>
+
+
+              <button class="btn btn-primary" value="Edit"><i  class="fas fa-edit"></i>
+
+
+
+
+              </button>
+
               <button (click)="deleteTodo(todo)" class="btn btn-danger" value="Delete"><i  class="fa fa-trash"></i></button>
+
+
 
             </td>
           </tr>
@@ -64,26 +114,29 @@
       </table>
     </div>
 
-
-
-
-      <div class="form-row">
-        <div class="col-md-5">
-          <input type="text" name="title" id="title" placeholder="Title" class="form-control" autofocus #todoTitle>
-        </div>
-
-        <div class="col-md-5">
-          <input name="duedate" id="duedate" class="form-control" type="datetime-local" value="2014-01-02T11:42:13" #todoDate>
-
-        </div>
-        <div class="col-md-2">
-          <button type="submit" class="btn btn-primary btn-block" (click)="addTodo($event,todoTitle,todoDate)">Create</button>
-        </div>
+    <div class="form-row">
+      <div class="col-md-5">
+        <input type="text" name="title" id="title" placeholder="Title" class="form-control" autofocus #todoTitle>
       </div>
+
+      <div class="col-md-5">
+        <input name="duedate" id="duedate" class="form-control" type="datetime-local" value="2014-01-02T11:42:13" #todoDate>
+
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary btn-block" (click)="addTodo($event,todoTitle,todoDate)">Create</button>
+      </div>
+    </div>
 
   </div>
   <!-- md 8 -->
   <div class="col-md-2"></div>
 
 
-  </div>
+
+
+
+
+
+
+</div>

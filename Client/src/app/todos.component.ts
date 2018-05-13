@@ -66,6 +66,10 @@ export class ToDosComponent implements OnInit{
     });
   }
 
+  editTodo(todo){
+      console.log(todo);
+  }
+
   //
   // // EDIT A TODO
   // updateTodoText(event, todo) {
@@ -98,5 +102,6 @@ export class ToDosComponent implements OnInit{
       }
     });
   }
+
 
 }//
