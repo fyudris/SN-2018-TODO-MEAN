@@ -3,7 +3,9 @@ var router = express.Router();
 var mongojs = require('mongojs');
 
 // DATA BASE
-var db = mongojs('mongodb://fyudris:oreo@ds125489.mlab.com:25489/mytasklist_db', ['todos']);
+// var dbURL = 'mongodb://fyudris:oreo@ds125489.mlab.com:25489/mytasklist_db';
+var dbURL = 'mongodb://fyudris:oreo@ds123124.mlab.com:23124/todolist_db';
+var db = mongojs(dbURL, ['todos']);
 
 // GET ALL TODOS
 router.get('/todos', function (req, res, next) {
@@ -32,10 +34,11 @@ router.get('/todos/:id', function (req, res, next) {
 // SAVE A NEW TODO
 router.post('/todo', function (req, res, next) {
     var todo = req. body;
-    if(!todo.text || !(todo.isCompleted + '')){
-        res.status(400);
-        res.json({"error": "Invalid Data"});
-    } else {
+    // if(!todo.text || !(todo.isCompleted + '')){
+    //     res.status(400);
+    //     res.json({"error": "Invalid Data in save"});
+    // }
+    //  else {
         db.todos.save(todo, function (err, result) {
             if(err){
                 res.send(err);
@@ -43,7 +46,7 @@ router.post('/todo', function (req, res, next) {
                 res.json(result);
             }
         });
-    }
+    // }
 });
 
 

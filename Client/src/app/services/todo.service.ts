@@ -16,9 +16,10 @@ export class ToDoService {
 
     // SAVE A NEW TODO TO THE DATABASE
     saveTodo(todo) {
+    console.log(todo);
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this._http.post('/api/v1/todo', JSON.stringify(todo), {headers: headers}).pipe(map(res => res.json()));
+        return this._http.post('/api/v1/todo', JSON.stringify(todo),{headers: headers}).pipe(map(res => res.json()));
     }
 
     // UPDATE A TODO
