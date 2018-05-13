@@ -35,7 +35,7 @@ $   nodemon server
 
 * **Fanny Yudris** - *Initial work* - [fyudris](https://github.com/fyudris)
 
-* **Katarzyna Juraszek** - [juraszekk] (https://github.com/juraszekk)
+* **Katarzyna Juraszek** - [juraszekk](https://github.com/fyudris)
 
 See also the list of [contributors](https://github.com/fyudris/SN-2018-TODO-MEAN/graphs/contributors) who participated in this project.
 
